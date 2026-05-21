@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps CI/CD Pipeline</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      padding:40px;
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:50px;
+      color:#38bdf8;
+    }
+
+    .pipeline{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .step{
+      background:#1e293b;
+      border:2px solid #38bdf8;
+      border-radius:15px;
+      width:180px;
+      min-height:220px;
+      padding:20px;
+      text-align:center;
+      position:relative;
+      transition:0.3s;
+    }
+
+    .step:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 20px #38bdf8;
+    }
+
+    .step img{
+      width:80px;
+      margin-bottom:15px;
+    }
+
+    .step h2{
+      font-size:20px;
+      margin-bottom:10px;
+      color:#38bdf8;
+    }
+
+    .step p{
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .arrow{
+      font-size:50px;
+      color:#38bdf8;
+    }
+
+    .bottom{
+      margin-top:60px;
+      background:#1e293b;
+      padding:30px;
+      border-radius:15px;
+      border:1px solid #38bdf8;
+    }
+
+    .bottom h2{
+      margin-bottom:20px;
+      color:#38bdf8;
+    }
+
+    ul{
+      line-height:2;
+    }
+
+    footer{
+      margin-top:50px;
+      text-align:center;
+      color:#94a3b8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>DevOps CI/CD Pipeline Architecture</h1>
+
+  <div class="pipeline">
+
+    <!-- Developer -->
+    <div class="step">
+      <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
+      <h2>Developer PC</h2>
+      <p>
+        Source Code 작성<br>
+        Git Commit & Push
+      </p>
+    </div>
+
+    <div class="arrow">➡</div>
+
+    <!-- GitHub -->
+    <div class="step">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+      <h2>GitHub</h2>
+      <p>
+        Source Repository<br>
+        Webhook Trigger
+      </p>
+    </div>
+
+    <div class="arrow">➡</div>
+
+    <!-- Jenkins -->
+    <div class="step">
+      <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png">
+      <h2>Jenkins</h2>
+      <p>
+        Git Pull<br>
+        Maven Build<br>
+        Artifact 생성
+      </p>
+    </div>
+
+    <div class="arrow">➡</div>
+
+    <!-- Ansible -->
+    <div class="step">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg">
+      <h2>Ansible</h2>
+      <p>
+        Playbook 실행<br>
+        Kubernetes 자동 배포
+      </p>
+    </div>
+
+    <div class="arrow">➡</div>
+
+    <!-- Kubernetes -->
+    <div class="step">
+      <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg">
+      <h2>Kubernetes</h2>
+      <p>
+        Deployment 생성<br>
+        Pod 생성 및 운영
+      </p>
+    </div>
+
+  </div>
+
+  <div class="bottom">
+
+    <h2>CI/CD Process Flow</h2>
+
+    <ul>
+      <li>1. Developer가 Local PC에서 애플리케이션 코드를 수정한다.</li>
+      <li>2. Git 명령어를 사용하여 GitHub Repository에 Push 한다.</li>
+      <li>3. Jenkins가 GitHub Webhook 이벤트를 감지한다.</li>
+      <li>4. Jenkins Pipeline이 자동 실행된다.</li>
+      <li>5. Maven Build를 통해 WAR/JAR Artifact를 생성한다.</li>
+      <li>6. Jenkins가 Ansible Playbook을 실행한다.</li>
+      <li>7. Ansible이 Kubernetes Master Node에 배포 명령을 전달한다.</li>
+      <li>8. Kubernetes가 Deployment와 Pod를 생성한다.</li>
+      <li>9. Service를 통해 사용자 요청을 처리한다.</li>
+    </ul>
+
+  </div>
+
+  <footer>
+    AWS EC2 + Jenkins + GitHub + Ansible + Kubernetes 기반 DevOps CI/CD Pipeline
+  </footer>
+
+</body>
+</html>
