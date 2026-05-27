@@ -6,6 +6,7 @@
   <title>DevOps CI/CD Pipeline</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -19,11 +20,30 @@
       padding:40px;
     }
 
+    /* 토폴로지 이미지 */
+
+    .topology{
+      width:100%;
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .topology img{
+      width:100%;
+      max-width:1450px;
+      border-radius:20px;
+      box-shadow:0 0 30px rgba(0,0,0,0.5);
+    }
+
+    /* 제목 */
+
     h1{
       text-align:center;
       margin-bottom:50px;
       color:#38bdf8;
     }
+
+    /* 파이프라인 */
 
     .pipeline{
       display:flex;
@@ -32,6 +52,8 @@
       flex-wrap:wrap;
       gap:20px;
     }
+
+    /* 카드 */
 
     .step{
       background:#1e293b;
@@ -64,12 +86,18 @@
     .step p{
       font-size:14px;
       line-height:1.6;
+      color:#e2e8f0;
     }
+
+    /* 화살표 */
 
     .arrow{
       font-size:50px;
       color:#38bdf8;
+      font-weight:bold;
     }
+
+    /* footer */
 
     footer{
       margin-top:60px;
@@ -79,15 +107,27 @@
     }
 
   </style>
+
 </head>
 
 <body>
 
+  <!-- 네트워크 토폴로지 -->
+
+  <div class="topology">
+    <img src="https://raw.githubusercontent.com/shironeko-shina/PDevOps/master/src/main/webapp/topology.png" alt="Network Topology">
+  </div>
+
+  <!-- DevOps 제목 -->
+
   <h1>DevOps CI/CD Pipeline Architecture</h1>
+
+  <!-- Pipeline -->
 
   <div class="pipeline">
 
     <!-- Developer -->
+
     <div class="step">
       <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
       <h2>Developer PC</h2>
@@ -100,6 +140,7 @@
     <div class="arrow">➡</div>
 
     <!-- GitHub -->
+
     <div class="step">
       <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
       <h2>GitHub</h2>
@@ -112,6 +153,7 @@
     <div class="arrow">➡</div>
 
     <!-- Jenkins -->
+
     <div class="step">
       <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png">
       <h2>Jenkins</h2>
@@ -125,6 +167,7 @@
     <div class="arrow">➡</div>
 
     <!-- Ansible -->
+
     <div class="step">
       <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg">
       <h2>Ansible</h2>
@@ -138,6 +181,7 @@
     <div class="arrow">➡</div>
 
     <!-- Docker Hub -->
+
     <div class="step">
       <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg">
       <h2>Docker Hub</h2>
@@ -150,6 +194,7 @@
     <div class="arrow">➡</div>
 
     <!-- Kubernetes -->
+
     <div class="step">
       <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg">
       <h2>Kubernetes</h2>
@@ -162,6 +207,7 @@
     <div class="arrow">➡</div>
 
     <!-- Load Balancer -->
+
     <div class="step">
       <img src="https://cdn-icons-png.flaticon.com/512/873/873120.png">
       <h2>Load Balancer</h2>
@@ -173,6 +219,8 @@
     </div>
 
   </div>
+
+  <!-- Footer -->
 
   <footer>
     AWS EC2 + Jenkins + GitHub + Ansible + Docker + Kubernetes + ALB 기반 DevOps CI/CD Pipeline
